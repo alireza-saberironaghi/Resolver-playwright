@@ -1,8 +1,6 @@
 
-![Playwright](https://github.com/alireza-saberironaghi/Resolver-playwright/assets/98224391/c4452839-61db-4b49-9451-1044de60ed62)
 
-![ppp](https://github.com/alireza-saberironaghi/Resolver-playwright/assets/98224391/4194f381-4059-4baa-abc6-7b79a65ed9ff)
-
+![Playwright](https://github.com/alireza-saberironaghi/Resolver-playwright/assets/98224391/4194f381-4059-4baa-abc6-7b79a65ed9ff)
 
 
 # Resolver Technical Assessment (Playwright with JavaScript)
