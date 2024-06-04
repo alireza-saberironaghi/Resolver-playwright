@@ -1,5 +1,4 @@
-Playwright Automated Testing Repository
-
+# Resolver Technical Assessment - Playwright JavaScript
 
 How to Run Tests
 
