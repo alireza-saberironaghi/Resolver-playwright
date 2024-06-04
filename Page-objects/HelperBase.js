@@ -7,8 +7,8 @@ export class HelperBase {
   }
 
 
-  async findCellValue(rowNumber, columnNumber) {
-    const tableCellSelector = `table.table tbody tr:nth-child(${rowNumber + 1}) td:nth-child(${columnNumber + 1})`;
+  async findCellValue(gridCellDetails) {
+    const tableCellSelector = `table.table tbody tr:nth-child(${gridCellDetails.rowNumber + 1}) td:nth-child(${gridCellDetails.columnNumber + 1})`;
     return await this.page.textContent(tableCellSelector);
   }
 
