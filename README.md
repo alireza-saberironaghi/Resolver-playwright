@@ -1,3 +1,7 @@
+
+![Playwright](https://github.com/alireza-saberironaghi/Resolver-playwright/assets/98224391/c4452839-61db-4b49-9451-1044de60ed62)
+
+
 # Resolver Technical Assessment (Playwright with JavaScript)
 
 This repository is created to complete the technical assessment for the QA Engineer position at Resolver.
