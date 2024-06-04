@@ -4,9 +4,8 @@ export const userDetails = {
 }
 
 export const environmentsURL = {
-    demoURL: 'index.html',
+    demoURL: '../index.html',
 }
-
 
 export const listGroupDetails = {
     listItemNumber: 2,
@@ -20,7 +19,6 @@ export const gridCellDetails = {
     columnNumber: 2,
     expectedTargetCellValue: 'Ventosanzap',
 }
-
 
 export const dropdownOptionValues = {
     option1: 'Option 1',

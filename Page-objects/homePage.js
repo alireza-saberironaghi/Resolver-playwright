@@ -9,10 +9,10 @@ export class HomePage extends HelperBase {
 
     // Sections
     this.test1Section = page.locator('#test-1-div')
-    this.test2Section = page.locator('#test-2-div')
-    this.test3Section = page.locator('#test-3-div')
-    this.test4Section = page.locator('#test-4-div')
-    this.test5Section = page.locator('#test-5-div')
+    this.test2Section = page.locator('//div[@id="test-2-div"]')
+    this.test3Section = page.locator('.col-sm-4#test-3-div')
+    this.test4Section = page.locator('[id="test-4-div"]')
+    this.test5Section = page.locator('.jumbotron #test-5-div')
     this.test6Section = page.locator('#test-6-div')
 
     // Test 1 Section Elements
@@ -40,97 +40,102 @@ export class HomePage extends HelperBase {
 
 
   // Section 1 methods
+
+  //Assert that both the email address and password inputs are present as well as the login button
+  async assertLoginElementsVisible() {
+    await this.assertElementVisible(this.emailAdressInput)
+    await this.assertElementVisible(this.passwordInput)
+    await this.assertElementVisible(this.signinButton)
+  }
+
   /**
-   * Logs in with the passed arguments and asserts that the Email, Password inputs and Login button elements are visible.
-   * @param {Object} userDetails - The login data containing the email and password.
-   * @param {string} userDetails.email - The email address to be used for login.
-   * @param {string} userDetails.password - The password to be used for login.
-   * @returns {Promise<void>} A promise that resolves when the login process is complete.
-   */
-  async loginWithCredentialsAndAssertElements(userDetails) {
-
-    //Assert that both the email address and password inputs are present as well as the login button
-    await expect(this.emailAdressInput).toBeVisible();
-    await expect(this.passwordInput).toBeVisible();
-    await expect(this.signinButton).toBeVisible();
-
-    //Enter in an email address and password combination into the respective fields
-    await this.emailAdressInput.fill(userDetails.email)
-    await this.passwordInput.fill(userDetails.password)
-    await this.signinButton.click()
+ * Logs in with the passed arguments and asserts that the Email, Password inputs and Login button elements are visible.
+ * @param {Object} userDetails - The login data containing the email and password.
+ * @param {string} userDetails.email - The email address to be used for login.
+ * @param {string} userDetails.password - The password to be used for login.
+ * @returns {Promise<void>} A promise that resolves when the login process is complete.
+ */
+  //Enter in an email address and password combination into the respective fields
+  async loginWithCredentials(userDetails) {
+    await this.fillInput(this.emailAdressInput, userDetails.email)
+    await this.fillInput(this.passwordInput, userDetails.password)
+    await this.clickOnElement(this.signinButton)
   }
 
 
-
   // Section 2 methods
-  /**
-   * This function validates the list group items and badge values on a Test 2 div.
-   * @param {*} listItemNumber  - An integer for the child number of the list item to be retrieved.
-   * @param {*} expectedListItemValue - A string for the expected value of the list item.
-   * @param {*} badgeItemNumber - An integer for the child number of the badge item to be retrieved.
-   * @param {*} expectedBadgeValue - An integer for the expected value of the badge item.
-   */
-  async validateListGroupItems(listGroupDetails) {
 
-    //In the test 2 div, assert that there are three values in the listgroup
-    await expect(this.listGroupItems).toHaveCount(3)
+  //In the test 2 div, assert that there are three values in the listgroup
+  async assertListGroupItemCount(expectedCount) {
+    await expect(this.listGroupItems).toHaveCount(expectedCount);
+  }
 
-    //Assert that the second list item's value is set to "List Item 2"
-    const ListItemsValue = await this.page.$eval(`#test-2-div .list-group-item:nth-child(${listGroupDetails.listItemNumber})`, item => item.firstChild.textContent.trim());
-    expect(ListItemsValue).toEqual(listGroupDetails.expectedListItemValue)
+  //Assert that the second list item's value is set to "List Item 2"
+  async assertListGroupItemValue(listGroupDetails) {
+    const listItemValue = await this.page.$eval(`#test-2-div .list-group-item:nth-child(${listGroupDetails.listItemNumber})`, item => item.firstChild.textContent.trim());
+    expect(listItemValue).toEqual(listGroupDetails.expectedListItemValue);
+  }
 
-    //Assert that the second list item's badge value is 6
-    const ListItemsBadgeValue = await this.page.$eval(`#test-2-div .list-group-item:nth-child(${listGroupDetails.badgeItemNumber}) .badge`, badge => badge.textContent.trim());
-    expect(parseInt(ListItemsBadgeValue, 10)).toEqual(listGroupDetails.expectedBadgeValue)
+  //Assert that the second list item's badge value is 6
+  async assertBadgeValue(listGroupDetails) {
+    const badgeValue = await this.page.$eval(`#test-2-div .list-group-item:nth-child(${listGroupDetails.badgeItemNumber}) .badge`, badge => badge.textContent.trim());
+    expect(parseInt(badgeValue, 10)).toEqual(listGroupDetails.expectedBadgeValue);
   }
 
 
 
   // Section 3 methods
-  async verifyDefaultAndSelectOptionInDropdown(dropdownOptionValues) {
 
-    //In the test 3 div, assert that "Option 1" is the default selected value
-    const dropdownMenuButtonText = await this.dropdownMenuButton.innerText()
-    expect(dropdownMenuButtonText.trim()).toEqual(dropdownOptionValues.option1)
-
-    //Select "Option 3" from the select list
-    await this.dropdownMenuButton.click()
-    await this.dropdownMenuItem.filter({ hasText: dropdownOptionValues.option3 }).click()
-
+  //In the test 3 div, assert that "Option 1" is the default selected value
+  async assertDefaultDropdownOption(dropdownOptionValues) {
+    const dropdownMenuButtonText = await this.dropdownMenuButton.innerText();
+    expect(dropdownMenuButtonText.trim()).toEqual(dropdownOptionValues.option1);
   }
+
+  //Select "Option 3" from the select list
+  async selectDropdownOption(dropdownOptionValues) {
+    await this.clickOnElement(this.dropdownMenuButton)
+    await this.dropdownMenuItem.filter({ hasText: dropdownOptionValues.option3 }).click();
+  }
+
+
 
   // Section 4 methods
-  async checkButtonStates() {
 
-    // In the test 4 div, assert that the first button is enabled and that the second button is disabled
-    expect(await this.firstButton.isEnabled()).toBeTruthy();
-    expect(await this.secondButton.isEnabled()).toBeFalsy();
-
+  // In the test 4 div, assert that the first button is enabled 
+  async assertFirstButtonIsEnabled() {
+    await this.assertButtonEnabled(this.firstButton)
   }
+
+  //In the test 4 div, assert that the second button is disabled
+  async assertSecondButtonIsDisabled() {
+    await this.assertButtonDisabled(this.secondButton)
+  }
+
+
 
   // Section 5 methods
-  async validateButtonClickAndSuccessMessageWithRandomDelay(alertMessages) {
 
+  async clickButtonAndWaitForSuccessMessage(alertMessages) {
     //  In the test 5 div, wait for a button to be displayed (note: the delay is random) and then click it
-    await this.test5Button.waitFor({ state: 'visible' });
-    await this.test5Button.click()
+    await this.assertElementVisible(this.test5Button)
+    await this.clickOnElement(this.test5Button)
 
     // Once you've clicked the button, assert that a success message is displayed
-    await this.successMessage.waitFor({ state: 'visible' });
+    await this.assertElementVisible(this.successMessage)
     expect(await this.successMessage.innerText()).toEqual(alertMessages.success);
-
-    // Assert that the button is now disabled
-    expect(await this.test5Button.isEnabled()).toBeFalsy();
-
   }
 
+
+  // Assert that the button is now disabled
+  async assertButtonDisabledAfterClick() {
+    await this.assertButtonDisabled(this.test5Button)
+  }
+
+
+
   // Section 6 methods
-/**
- * 
- * @param {*} rowNumber - An integer for the row number of the table
- * @param {*} columnNumber  - An integer for the column number of the table
- * @param {*} expectedTargetCellValue - A string for the expected target cell value of the table
- */
+
   async retrieveAndVerifyGridCellValue(gridCellDetails) {
 
     //  Write a method that allows you to find the value of any cell on the grid

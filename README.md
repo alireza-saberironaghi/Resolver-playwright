@@ -1,7 +1,4 @@
-
-
 ![Playwright](https://github.com/alireza-saberironaghi/Resolver-playwright/assets/98224391/4194f381-4059-4baa-abc6-7b79a65ed9ff)
-
 
 # Resolver Technical Assessment (Playwright with JavaScript)
 
@@ -16,6 +13,8 @@ The repository utilizes Playwright with JavaScript and is organized into several
 - The test data file, where all Enums for the tests are defined, can be found in the [`userDetails.js`](https://github.com/alireza-saberironaghi/Resolver-playwright/blob/main/Test-data/userDetails.js) file.
 - The homepage object model is implemented in the [`homePage.js`](https://github.com/alireza-saberironaghi/Resolver-playwright/blob/main/Page-objects/homePage.js) file.
 - The page manager, which manages different page objects, is defined in the [`PageManager.js`](https://github.com/alireza-saberironaghi/Resolver-playwright/blob/main/Page-objects/PageManager.js).
+- The guide file, which contains details on test cases and requirements, can be found in the [`guide.md`](https://github.com/alireza-saberironaghi/Resolver-playwright/blob/main/guide.md) file.
+- The index file, which details the system under test, can be found in the [`index.md`](https://github.com/alireza-saberironaghi/Resolver-playwright/blob/main/index.md) file.
 
 ## Installation
 
@@ -59,6 +58,24 @@ To execute the tests, you can use the following commands.
 - **Test Data**: User details for testing purposes are in the [`userDetails.js`](https://github.com/alireza-saberironaghi/Resolver-playwright/blob/main/Test-data/userDetails.js).
 - **Homepage Object Model**: Defined in the [`homePage.js`](https://github.com/alireza-saberironaghi/Resolver-playwright/blob/main/Page-objects/homePage.js) file.
 - **Page Manager**: Manages the different page objects and is found in the [`PageManager.js`](https://github.com/alireza-saberironaghi/Resolver-playwright/blob/main/Page-objects/PageManager.js).
+- **Guide**: Contains details on test cases and requirements in the [`guide.md`](https://github.com/alireza-saberironaghi/Resolver-playwright/blob/main/guide.md) file.
+- **Index**: Details the system under test in the [`index.md`](https://github.com/alireza-saberironaghi/Resolver-playwright/blob/main/index.md) file.
+
+## Good Practices
+
+The project adheres to several good practices to ensure maintainability, readability, and efficiency:
+
+- **KISS (Keep It Simple, Stupid)**: The test scripts are kept simple and straightforward, avoiding unnecessary complexity.
+- **DRY (Don't Repeat Yourself)**: Common functionalities are abstracted into helper functions to avoid repetition.
+- **Readability**: Code is written in a clear and readable manner, with meaningful variable and function names.
+- **Maintainability**: The project is organized in a modular way, making it easy to update and maintain.
+- **Consistent Naming Conventions**: Consistent naming conventions are used throughout the project to enhance clarity and understanding.
+- **Comments and Documentation**: Proper comments and documentation are provided to explain the purpose and functionality of different parts of the code.
+- **Scalability**: The test framework is designed to easily accommodate additional test cases and functionalities as the project grows.
+- **Performance and Efficiency**: Test scripts are optimized to run efficiently, minimizing execution time while ensuring comprehensive test coverage.
+- **Test Data Management**: Test data is managed effectively to ensure tests are independent, repeatable, and consistent.
+- **Single Responsibility Principle (SRP)**: Each module or class has a single responsibility, making the codebase easier to understand, maintain, and extend.
+
 
 ## Reporting
 
