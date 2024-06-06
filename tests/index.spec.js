@@ -38,7 +38,7 @@ test('Test 4: Check Button States', async ({ page }) => {
 
 test('Test 5: Validate Button Click and Success Message with Random Delay', async ({ page }) => {
   const pm = new PageManager(page)
-  await pm.onHomePage().clickButtonAndWaitForSuccessMessage(alertMessages)
+  await pm.onHomePage().clickButtonAndWaitForSuccessMessage(alertMessages, 15000)
   await pm.onHomePage().assertButtonDisabledAfterClick()
 });
 

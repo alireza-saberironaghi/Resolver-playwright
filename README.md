@@ -10,11 +10,11 @@ The repository utilizes Playwright with JavaScript and is organized into several
   You can find the test script in the [`index.spec.js`](https://github.com/alireza-saberironaghi/Resolver-playwright/blob/main/tests/index.spec.js) file. This was made using Playwright.
 - The next part is the helper base. 
   The helper base file can be found in the [`HelperBase.js`](https://github.com/alireza-saberironaghi/Resolver-playwright/blob/main/Page-objects/HelperBase.js).
-- The test data file, where all Enums for the tests are defined, can be found in the [`userDetails.js`](https://github.com/alireza-saberironaghi/Resolver-playwright/blob/main/Test-data/userDetails.js) file.
+- The test data file, where all Enums for the tests are defined, can be found in the [`dataManagement.js`](https://github.com/alireza-saberironaghi/Resolver-playwright/blob/main/Test-data/dataManagement.js) file.
 - The homepage object model is implemented in the [`homePage.js`](https://github.com/alireza-saberironaghi/Resolver-playwright/blob/main/Page-objects/homePage.js) file.
 - The page manager, which manages different page objects, is defined in the [`PageManager.js`](https://github.com/alireza-saberironaghi/Resolver-playwright/blob/main/Page-objects/PageManager.js).
-- The guide file, which contains details on test cases and requirements, can be found in the [`guide.md`](https://github.com/alireza-saberironaghi/Resolver-playwright/blob/main/guide.md) file.
-- The index file, which details the system under test, can be found in the [`index.md`](https://github.com/alireza-saberironaghi/Resolver-playwright/blob/main/index.md) file.
+- The guide file, which contains details on test cases and requirements, can be found in the [`guide.html`](https://alexqa.io/Resolver/guide.html) file.
+- The index file, which details the system under test, can be found in the [`index.html`](https://alexqa.io/Resolver/index.html) file.
 
 ## Installation
 
@@ -55,11 +55,11 @@ To execute the tests, you can use the following commands.
 
 - **Test Script**: Located in the [`index.spec.js`](https://github.com/alireza-saberironaghi/Resolver-playwright/blob/main/tests/index.spec.js) file.
 - **Helper Base**: Common helper functions are in the [`HelperBase.js`](https://github.com/alireza-saberironaghi/Resolver-playwright/blob/main/Page-objects/HelperBase.js).
-- **Test Data**: User details for testing purposes are in the [`userDetails.js`](https://github.com/alireza-saberironaghi/Resolver-playwright/blob/main/Test-data/userDetails.js).
+- **Test Data**: User details for testing purposes are in the [`dataManagement.js`](https://github.com/alireza-saberironaghi/Resolver-playwright/blob/main/Test-data/dataManagement.js).
 - **Homepage Object Model**: Defined in the [`homePage.js`](https://github.com/alireza-saberironaghi/Resolver-playwright/blob/main/Page-objects/homePage.js) file.
 - **Page Manager**: Manages the different page objects and is found in the [`PageManager.js`](https://github.com/alireza-saberironaghi/Resolver-playwright/blob/main/Page-objects/PageManager.js).
-- **Guide**: Contains details on test cases and requirements in the [`guide.md`](https://github.com/alireza-saberironaghi/Resolver-playwright/blob/main/guide.md) file.
-- **Index**: Details the system under test in the [`index.md`](https://github.com/alireza-saberironaghi/Resolver-playwright/blob/main/index.md) file.
+- **Guide**: Contains details on test cases and requirements in the [`guide.html`](https://alexqa.io/Resolver/guide.html) file.
+- **Index**: Details the system under test in the [`index.html`](https://alexqa.io/Resolver/index.html) file.
 
 ## Good Practices
 
@@ -85,6 +85,8 @@ After executing the tests, Playwright generates a report that you can access to 
     ```
 
 This will open a browser window displaying the test results.
+
+![report](https://github.com/alireza-saberironaghi/Resolver-playwright/assets/98224391/428a0682-2983-45c1-b0ee-5c92e038d2f1)
 
 ## Conclusion
 

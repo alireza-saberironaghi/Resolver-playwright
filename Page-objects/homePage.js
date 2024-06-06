@@ -116,9 +116,9 @@ export class HomePage extends HelperBase {
 
   // Section 5 methods
 
-  async clickButtonAndWaitForSuccessMessage(alertMessages) {
+  async clickButtonAndWaitForSuccessMessage(alertMessages, timeout) {
     //  In the test 5 div, wait for a button to be displayed (note: the delay is random) and then click it
-    await this.assertElementVisible(this.test5Button)
+    await this.assertElementVisible(this.test5Button, timeout)
     await this.clickOnElement(this.test5Button)
 
     // Once you've clicked the button, assert that a success message is displayed

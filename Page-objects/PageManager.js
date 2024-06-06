@@ -1,6 +1,6 @@
 const { test } = require('@playwright/test');
-import { HeaderPage } from './headerPage.js'
-import { HomePage } from './homePage.js'
+import { HeaderPage } from './HeaderPage.js'
+import { HomePage } from './HomePage.js'
 
 export class PageManager {
 

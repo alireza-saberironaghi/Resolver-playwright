@@ -11,9 +11,10 @@ export class HelperBase {
     await inputElement.fill(value);
   }
 
-  async assertElementVisible(element) {
-    await expect(element).toBeVisible();
-  }
+  async assertElementVisible(element, timeout = 5000) {
+    await expect(element).toBeVisible({ timeout });
+}
+
 
   async clickOnElement(element) {
     await element.waitFor({ state: 'visible' });
