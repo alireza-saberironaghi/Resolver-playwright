@@ -6,7 +6,7 @@ const Data = {
   environments: [
     'https://parama.sites.dev.thirdstream.ca/inbranch/deposits/en/app/flow/welcome',
     'https://parama.sites.qa.thirdstream.ca/inbranch/deposits/en/app/flow/welcome',
-    'https://parama.sites.test.thirdstream.ca/inbranch/deposits/en/app/flow/welcome',
+    'https://parama.sites.test.thirdstream.ca/inbranch/deposits/en/app/flow/welcome/?idp=3S',
     'https://parama.sites.staging.thirdstream.ca/inbranch/deposits/en/app/flow/welcome',
     'https://parama.sites.staging.thirdstream.ca/inbranch/deposits/en/app/flow/welcome'
   ],
@@ -1409,3 +1409,4 @@ function generateRandomSIN() {
   } while (!luhnChecksum(sin));
   return sin.toString();
 }
+
